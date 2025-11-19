@@ -1,9 +1,7 @@
+// app/tabs/tabRegistry.ts
 import dynamic from "next/dynamic";
 
-export const TAB_REGISTRY = {
-  // ============================================================
-  // 1️⃣ LIVE STATUS (9 subtabs)
-  // ============================================================
+export const TAB_REGISTRY: Record<string, Record<string, any>> = {
   LiveStatus: {
     OverviewLanding: dynamic(() => import("./LiveStatus/OverviewLandingSubtab")),
     SystemHealth: dynamic(() => import("./LiveStatus/SystemHealthSubtab")),
@@ -16,9 +14,6 @@ export const TAB_REGISTRY = {
     CoreLogs: dynamic(() => import("./LiveStatus/CoreLogsSubtab")),
   },
 
-  // ============================================================
-  // 2️⃣ ACCOUNT (9 subtabs)
-  // ============================================================
   Account: {
     OverviewLanding: dynamic(() => import("./Account/OverviewLandingSubtab")),
     Exposure: dynamic(() => import("./Account/ExposureSubtab")),
@@ -31,9 +26,6 @@ export const TAB_REGISTRY = {
     CapitalFlow: dynamic(() => import("./Account/CapitalFlowSubtab")),
   },
 
-  // ============================================================
-  // 3️⃣ FEED MODE (9 subtabs)
-  // ============================================================
   FeedMode: {
     OverviewLanding: dynamic(() => import("./FeedMode/OverviewLandingSubtab")),
     MetricsLab: dynamic(() => import("./FeedMode/MetricsLabSubtab")),
@@ -46,24 +38,18 @@ export const TAB_REGISTRY = {
     FeedEvents: dynamic(() => import("./FeedMode/FeedEventsSubtab")),
   },
 
-  // ============================================================
-  // 4️⃣ STRATEGY (9 subtabs)
-  // ============================================================
   Strategy: {
     OverviewLanding: dynamic(() => import("./Strategy/OverviewLandingSubtab")),
     Builder: dynamic(() => import("./Strategy/BuilderSubtab")),
     Backtest: dynamic(() => import("./Strategy/BacktestSubtab")),
     Optimizer: dynamic(() => import("./Strategy/OptimizerSubtab")),
-    SLLogic: dynamic(() => import("./Strategy/SLLogicSubtab")), // Correct
+    SLLogic: dynamic(() => import("./Strategy/SLLogicSubtab")),
     ExecutionCluster: dynamic(() => import("./Strategy/ExecutionClusterSubtab")),
     Performance: dynamic(() => import("./Strategy/PerformanceSubtab")),
     Settings: dynamic(() => import("./Strategy/SettingsSubtab")),
     TraceLogs: dynamic(() => import("./Strategy/TraceLogsSubtab")),
   },
 
-  // ============================================================
-  // 5️⃣ PROFIT & LOSS (9 subtabs)
-  // ============================================================
   ProfitLoss: {
     OverviewLanding: dynamic(() => import("./ProfitLoss/OverviewLandingSubtab")),
     Daily: dynamic(() => import("./ProfitLoss/DailySubtab")),
@@ -76,9 +62,6 @@ export const TAB_REGISTRY = {
     Insights: dynamic(() => import("./ProfitLoss/InsightsSubtab")),
   },
 
-  // ============================================================
-  // 6️⃣ COMPLIANCE (9 subtabs)
-  // ============================================================
   Compliance: {
     OverviewLanding: dynamic(() => import("./Compliance/OverviewLandingSubtab")),
     Rules: dynamic(() => import("./Compliance/RulesSubtab")),
@@ -91,9 +74,6 @@ export const TAB_REGISTRY = {
     RegulatoryMap: dynamic(() => import("./Compliance/RegulatoryMapSubtab")),
   },
 
-  // ============================================================
-  // 7️⃣ SETTINGS (9 subtabs)
-  // ============================================================
   Settings: {
     OverviewLanding: dynamic(() => import("./Settings/OverviewLandingSubtab")),
     System: dynamic(() => import("./Settings/SystemSubtab")),

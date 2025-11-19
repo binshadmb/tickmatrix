@@ -14,11 +14,12 @@
     "jsx": "preserve",
     "incremental": true,
 
+    "baseUrl": ".",                              // ✅ REQUIRED
     "paths": {
-      "@/*": ["./*"],          // ROOT alias
-      "@app/*": ["app/*"],     // Optional, for cleaner app imports
-      "@components/*": ["components/*"], // Optional, for components
-      "@tabs/*": ["app/tabs/*"] // Optional, helps with tab imports
+      "@/*": ["./*"],
+      "@app/*": ["app/*"],
+      "@components/*": ["components/*"],
+      "@tabs/*": ["app/tabs/*"]
     },
 
     "plugins": [

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import dynamic from "next/dynamic";
 
@@ -6,6 +6,6 @@ const CockpitShell = dynamic(() => import("@/components/CockpitShell"), {
   ssr: false,
 });
 
-export default function TestPage() {
+export default function Page() {
   return <CockpitShell />;
 }
