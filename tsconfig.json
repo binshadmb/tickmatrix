@@ -5,35 +5,36 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
 
-    "baseUrl": ".",                              // ✅ REQUIRED
+    /* ✔ YOUR PATH ALIASES MUST LIVE INSIDE compilerOptions */
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@app/*": ["app/*"],
-      "@components/*": ["components/*"],
-      "@tabs/*": ["app/tabs/*"]
+      "@/*": ["app/*"],
+      "@tabs/*": ["app/tabs/*"],
+      "@components/*": ["app/components/*"]
     },
 
     "plugins": [
-      { "name": "next" }
+      {
+        "name": "next"
+      }
     ]
   },
 
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
 
   "exclude": ["node_modules"]
